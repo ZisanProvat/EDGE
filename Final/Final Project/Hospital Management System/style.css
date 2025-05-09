@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: wheat;
+}
+nav {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  text-align: right;
+}
+nav a {
+  color:whitesmoke;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+.container {
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 10px;
+}
+form input, form button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+.doctor-card, .medicine-item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+.doctor-card img, .medicine-item img {
+  margin-right: 15px;
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+}
+input[type="search"] {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+
+
+/* Make navigation responsive using Flexbox */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive layout for main container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Flex-wrap for card containers if needed */
+.card-container, .medicine-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.doctor-card, .medicine-item {
+  flex: 1 1 300px;
+}

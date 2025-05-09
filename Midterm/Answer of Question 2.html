@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        </style>
+</head>
+<body>
+    <h1>JSON Table</h1>
+    <table border="1" id="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+    </table>
+    <script>
+        const jsonData = `[
+  {"id": 1, "name": "Alice Johnson", "email": "alice@example.com"},
+  {"id": 2, "name": "Bob Smith", "email": "bob@example.com"},
+  {"id": 3, "name": "Charlie Brown", "email": "charlie@example.com"},
+  {"id": 4, "name": "David Wilson", "email": "david@example.com"},
+  {"id": 5, "name": "Emma Davis", "email": "emma@example.com"},
+  {"id": 6, "name": "Frank Thomas", "email": "frank@example.com"},
+  {"id": 7, "name": "Grace Miller", "email": "grace@example.com"},
+  {"id": 8, "name": "Henry White", "email": "henry@example.com"},
+  {"id": 9, "name": "Isabella Moore", "email": "isabella@example.com"},
+  {"id": 10, "name": "Jack Taylor", "email": "jack@example.com"}
+]`;
+const data=JSON.parse(jsonData);
+const table=document.getElementById("tbody");
+data.forEach(obj=>{
+    const row=document.createElement('tr');
+    row.innerHTML+=`<td>${obj.id}</td><td>${obj.name}</td><td>${obj.email}</td><td><button class="dlt">Delete</button></td>`;
+    table.appendChild(row);
+        row.querySelector(".dlt").addEventListener("click", function() {
+                row.remove();
+            });
+
+});
+
+
+    </script>
+</body>
+</html>
